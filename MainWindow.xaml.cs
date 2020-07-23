@@ -24,24 +24,29 @@ namespace RazielSignal
     {
         List<File> FolderList = new List<File>();
         public static string Path = @"c:\RazielSignal";
+        SocketClient socket;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            socket = new SocketClient("192.168.100.13", 5000);
+            socket.fnConnectSocket();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
-        {            
-            ListAllFiles();
+        {
+            List<File> test = SendReceive(Path);
+            ListAllFiles(test);
         }
 
-        public void ListAllFiles()
+        public void ListAllFiles(List<File> msg)
         {
-            FolderList.Clear();
-            FolderList.AddRange(Folder.ListAllFolders(Path));
-            FolderList.AddRange(Text.ListAllTextFiles(Path));
             GridFolder.ItemsSource = null;
-            GridFolder.ItemsSource = FolderList;
+            GridFolder.ItemsSource = msg;
+        }
+
+        public List<File> SendReceive(string value) {
+            socket.fnSendInfo(value);
+            return socket.fnReceiveInfo();
         }
 
         private void CreateAFolder(object sender, RoutedEventArgs e)
@@ -55,9 +60,9 @@ namespace RazielSignal
 
         private void GridFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
             File file = (File)GridFolder.SelectedItem;
-            Console.WriteLine(file.Path);
+            List<File> value = SendReceive(file.Path);
             Path = file.Path;
-            ListAllFiles();
+            ListAllFiles(value);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e) {
@@ -65,7 +70,8 @@ namespace RazielSignal
             newPath[newPath.Length - 1] = "";
             Path = String.Join("\\",newPath);
             Path = Path.Substring(0, Path.Length - 1);
-            ListAllFiles();
+            List<File> value = SendReceive(Path);
+            ListAllFiles(value);
         }
     }
 }

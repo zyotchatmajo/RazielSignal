@@ -8,6 +8,7 @@ using System.Windows.Controls;
 
 namespace RazielSignal
 {
+    [Serializable()]
     class Folder : File
     {
         public Folder(string Name, DateTime CreationDate, string Path)

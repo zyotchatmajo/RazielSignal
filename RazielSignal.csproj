@@ -57,6 +57,7 @@
     <Compile Include="New File.xaml.cs">
       <DependentUpon>New File.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SocketClient.cs" />
     <Compile Include="Text.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
