@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,14 +31,16 @@ namespace RazielSignal
 
         }
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             ListAllFiles();
         }
 
         public void ListAllFiles()
         {
+            FolderList.Clear();
             FolderList.AddRange(Folder.ListAllFolders(Path));
             FolderList.AddRange(Text.ListAllTextFiles(Path));
+            GridFolder.ItemsSource = null;
             GridFolder.ItemsSource = FolderList;
         }
 
@@ -48,6 +51,21 @@ namespace RazielSignal
             NewFileWindow.Add_File.Content = "Add Folder";
             NewFileWindow.Show();
             
+        }
+
+        private void GridFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
+            File file = (File)GridFolder.SelectedItem;
+            Console.WriteLine(file.Path);
+            Path = file.Path;
+            ListAllFiles();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            String[] newPath = Path.Split('\\');
+            newPath[newPath.Length - 1] = "";
+            Path = String.Join("\\",newPath);
+            Path = Path.Substring(0, Path.Length - 1);
+            ListAllFiles();
         }
     }
 }
