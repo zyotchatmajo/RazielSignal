@@ -55,5 +55,14 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
+        <Rectangle HorizontalAlignment="Left" Height="29" Margin="0,390,0,0" Stroke="Black" VerticalAlignment="Top" Width="792">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF333AC5" Offset="0.38"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Developed by Sergio &amp; Kevin &amp; Many" Margin="292,0,289,0" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FFCBCBCB"/>
     </Grid>
 </Window>
