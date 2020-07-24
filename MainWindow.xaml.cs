@@ -66,12 +66,21 @@ namespace RazielSignal
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e) {
+            
+        }
+
+        public void fuckGoBack()
+        {
             String[] newPath = Path.Split('\\');
             newPath[newPath.Length - 1] = "";
-            Path = String.Join("\\",newPath);
+            Path = String.Join("\\", newPath);
             Path = Path.Substring(0, Path.Length - 1);
             List<File> value = SendReceive(Path);
             ListAllFiles(value);
+        }
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fuckGoBack();
         }
     }
 }
