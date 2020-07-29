@@ -25,6 +25,8 @@ namespace RazielSignal
         List<File> FolderList = new List<File>();
         public static string Path = @"c:\RazielSignal";
         SocketClient socket;
+        string type;
+        string data;
 
         public MainWindow()
         {
@@ -67,10 +69,12 @@ namespace RazielSignal
         }
 
         private void GridFolder_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
-            File file = (File)GridFolder.SelectedItem;
-            List<File> value = SendReceive(file.Path);
-            Path = file.Path;
-            ListAllFiles(value);
+            if (GridFolder.SelectedItem != null) {
+                File file = (File) GridFolder.SelectedItem;
+                List<File> value = SendReceive(file.Path);
+                Path = file.Path;
+                ListAllFiles(value);
+            }            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e) {
@@ -105,6 +109,13 @@ namespace RazielSignal
             NewFileWindow.Add_File.Content = "Add File";
             NewFileWindow.ShowDialog();
             ListAllFiles(await socket.fnReceiveInfoAsync());
+        }
+
+        private void Delete_MouseDown(object sender, MouseButtonEventArgs e) {
+            File file = (File) GridFolder.SelectedItem;
+            type = file.Type.Contains("Folder") ? "Folder" : "File";
+            data = type + ",Delete," + file.Name + "," + Path;
+            ListAllFiles(SendReceive(data));
         }
     }
 }

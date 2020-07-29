@@ -42,7 +42,7 @@
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="new file.png"/>
             <Label Content="New File" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
         </Canvas>
-        <Canvas Name="Delete" Height="34" Margin="541,7,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown_1">
+        <Canvas Name="Delete" Height="34" Margin="541,7,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Delete_MouseDown">
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="Delete.png"/>
             <Label Content="Delete Item" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
         </Canvas>
