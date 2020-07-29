@@ -30,7 +30,15 @@ namespace RazielSignal
         {
             InitializeComponent();
             socket = new SocketClient("192.168.100.13", 5000);
+            //socket = new SocketClient("25.66.199.96", 5000);
             socket.fnConnectSocket();
+
+            fill();
+        }
+
+        public void fill() {
+            List<File> test = SendReceive(Path);
+            ListAllFiles(test);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -51,10 +59,10 @@ namespace RazielSignal
 
         private void CreateAFolder(object sender, RoutedEventArgs e)
         {
-            New_File NewFileWindow = new New_File();
-            NewFileWindow.Path.Content = Path;
-            NewFileWindow.Add_File.Content = "Add Folder";
-            NewFileWindow.Show();
+            //New_File NewFileWindow = new New_File();
+            //NewFileWindow.Path.Content = Path;
+            //NewFileWindow.Add_File.Content = "Add Folder";
+            //NewFileWindow.Show();
             
         }
 
@@ -81,6 +89,22 @@ namespace RazielSignal
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             fuckGoBack();
+        }
+
+        private async void Canvas_MouseDown(object sender, MouseButtonEventArgs e) {
+            New_File NewFileWindow = new New_File(socket);
+            NewFileWindow.Path.Content = Path;
+            NewFileWindow.Add_File.Content = "Add Folder";
+            NewFileWindow.ShowDialog();
+            ListAllFiles(await socket.fnReceiveInfoAsync());
+        }
+
+        private async void Canvas_MouseDown_1(object sender, MouseButtonEventArgs e) {
+            New_File NewFileWindow = new New_File(socket);
+            NewFileWindow.Path.Content = Path;
+            NewFileWindow.Add_File.Content = "Add File";
+            NewFileWindow.ShowDialog();
+            ListAllFiles(await socket.fnReceiveInfoAsync());
         }
     }
 }

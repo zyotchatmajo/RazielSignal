@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RazielSignal"
         mc:Ignorable="d"
-        Title="New_File" Height="185.087" Width="187.683">
-    <Grid>
+        Title="New_File" Height="202.439" Width="252.463">
+    <Grid Margin="0,0,2,-12">
         <Label x:Name="LabelFileName" Content="Name" Margin="27,36,33,0" Height="28" Width="120" VerticalAlignment="Top"/>
         <TextBox x:Name="TXTName" Height="23" Margin="27,64,33,0" TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
-        <Button x:Name="Add_File" Content="Button" Margin="27,100,33,0" Width="120" Height="26" VerticalAlignment="Top"/>
+        <Button x:Name="Add_File" Content="Button" Margin="27,100,33,0" Width="120" Height="26" VerticalAlignment="Top" Click="Add_File_Click"/>
         <Label x:Name="Path" Content="Ruta" Margin="27,10,33,0" Height="28" Width="120" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
 
     </Grid>

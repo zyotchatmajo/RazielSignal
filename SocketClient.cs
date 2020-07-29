@@ -9,7 +9,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace RazielSignal {
-    class SocketClient
+    public class SocketClient
     {
         int Port { get; set; }
         string Ip { get; set; }

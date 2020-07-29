@@ -9,15 +9,12 @@
     <Grid>
         <Label x:Name="LabelPath" Content="Ruta" HorizontalAlignment="Left" Margin="60,12,0,0" VerticalAlignment="Top" Width="116" Height="34"/>
         <DataGrid x:Name="GridFolder" Margin="14,50,101,51" IsReadOnly="True" CanUserAddRows="True" MouseDoubleClick="GridFolder_MouseDoubleClick"/>
-        <Button Content="manualUpdate&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="694,30,0,0" VerticalAlignment="Top" Width="90" Click="Button_Click" Height="24"/>
-        <Button x:Name="btnCreateFolder" Content="New Folder" HorizontalAlignment="Left" Margin="691,69,0,0" VerticalAlignment="Top" Width="93" Height="23" Click="CreateAFolder"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="696,114,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Image HorizontalAlignment="Left" Height="35" Margin="14,10,0,0" VerticalAlignment="Top" Width="31" Source="return.png" MouseLeftButtonDown="Image_MouseLeftButtonDown">
             <Image.Effect>
                 <DropShadowEffect BlurRadius="1" Opacity="0.2"/>
             </Image.Effect>
         </Image>
-        <Canvas Height="35" Margin="387,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left">
+        <Canvas Name="Folder" Height="35" Margin="387,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown">
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="new folder.png"/>
             <Label Content="New Folder" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
         </Canvas>
@@ -41,7 +38,7 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Canvas Height="34" Margin="526,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left">
+        <Canvas Name="File" Height="34" Margin="526,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown_1">
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="new file.png"/>
             <Label Content="New File" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
         </Canvas>
@@ -63,6 +60,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="Developed by Sergio &amp; Kevin &amp; Many" Margin="292,0,289,0" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FFCBCBCB"/>
+        <Label Content="Developed by Sergio &amp; Kevin &amp; Many" Margin="246,0,232,0" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FFCBCBCB" Width="314"/>
     </Grid>
 </Window>
