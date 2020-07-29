@@ -14,11 +14,11 @@
                 <DropShadowEffect BlurRadius="1" Opacity="0.2"/>
             </Image.Effect>
         </Image>
-        <Canvas Name="Folder" Height="35" Margin="387,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown">
+        <Canvas Name="Folder" Height="36" Margin="286,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown">
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="new folder.png"/>
-            <Label Content="New Folder" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
+            <Label Content="New Folder" Canvas.Left="43" Height="25" Width="83" Canvas.Top="6"/>
         </Canvas>
-        <Separator HorizontalAlignment="Left" Height="54" Margin="355,-2,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+        <Separator HorizontalAlignment="Left" Height="54" Margin="254,-2,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,11 +38,15 @@
                 </TransformGroup>
             </Separator.RenderTransform>
         </Separator>
-        <Canvas Name="File" Height="34" Margin="526,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown_1">
+        <Canvas Name="File" Height="34" Margin="425,6,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown_1">
             <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="new file.png"/>
             <Label Content="New File" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
         </Canvas>
-        <Separator HorizontalAlignment="Left" Height="54" Margin="494,-2,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+        <Canvas Name="Delete" Height="34" Margin="541,7,0,0" VerticalAlignment="Top" Width="136" HorizontalAlignment="Left" MouseDown="Canvas_MouseDown_1">
+            <Image HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="38" Source="Delete.png"/>
+            <Label Content="Delete Item" Canvas.Left="43" Height="25" Width="92" Canvas.Top="6"/>
+        </Canvas>
+        <Separator HorizontalAlignment="Left" Height="54" Margin="393,-2,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
             <Separator.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -61,5 +65,15 @@
             </Rectangle.Fill>
         </Rectangle>
         <Label Content="Developed by Sergio &amp; Kevin &amp; Many" Margin="246,0,232,0" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FFCBCBCB" Width="314"/>
+        <Separator HorizontalAlignment="Left" Height="54" Margin="510,-2,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
     </Grid>
 </Window>
